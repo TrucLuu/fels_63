@@ -1,3 +1,11 @@
+gravatar:
+  large_size: 100
+  normal_size: 50
+length:
+  short_maximum: 50
+  long_maximum: 255
+  minimum: 6
+VALID_EMAIL_REGEX: !ruby/regexp /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
 setting:
   maximum_length_email: 255
   maximum_length_name: 50
