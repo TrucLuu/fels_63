@@ -62,8 +62,10 @@ ActiveRecord::Schema.define(version: 20150624022443) do
     t.boolean  "active"
     t.boolean  "admin"
     t.string   "image"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+    t.string   "activation_digest"
+    t.datetime "activated_at"
   end
 
   create_table "words", force: :cascade do |t|

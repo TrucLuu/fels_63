@@ -31,3 +31,9 @@ en:
     This is the help page for the Framgia E-Learning System application.
     This is the help page for the Framgia E-Learning System application.
     This is the help page for the Framgia E-Learning System application."
+  account-active: "Account Activated !"
+  invalid: "Invalid activation link"
+  activation: "Account activation"
+  hi: "Hi "
+  link_click: "Welcome to the Sample App! Click on the link below to activate your account:"
+  activate: "Active"
