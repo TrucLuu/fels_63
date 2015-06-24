@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150624022443) do
+ActiveRecord::Schema.define(version: 20150625034100) do
 
   create_table "answers", force: :cascade do |t|
     t.boolean  "correct"
@@ -66,6 +66,8 @@ ActiveRecord::Schema.define(version: 20150624022443) do
     t.datetime "updated_at",        null: false
     t.string   "activation_digest"
     t.datetime "activated_at"
+    t.string   "reset_digest"
+    t.datetime "reset_sent_at"
   end
 
   create_table "words", force: :cascade do |t|
