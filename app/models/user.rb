@@ -8,4 +8,14 @@ class User < ActiveRecord::Base
                                   dependent: :destroy
   has_many :following, through: :active_relationships, source: :followed
   has_many :followers, through: :passive_relationships, source: :follower
+  
+  before_save {self.email = email.downcase}
+
+  validates :name, presence: true, length: {maximum: Settings.setting.maximum_length_name}
+  validates :email, presence: true, length: {maximum: Settings.setting.maximum_length_email},
+                    format: {with: Settings.setting.VALID_EMAIL_REGEX},
+                    uniqueness: {case_sensitive: false}
+  validates :password, presence: true, length: {minimum: Settings.setting.minimum_length_password}
+
+  has_secure_password
 end

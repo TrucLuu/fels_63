@@ -1,14 +1,18 @@
 en:
+  contains: "The form contains "
+  error: "error"
+  create-account: "Create my account"
   hello: "Hello world !"
   elearning: "Framgia E-Learning System"
+  signup: "Sign-up"
   about: "About"
   contact: "Contact"
   home: "Home"
   help: "Help"
-  signup: "Sign up"
+  signup-buttonnup: "Sign up"
   here: "here"
   signup-button: "Sign up now!"
-  welcome: "Welcome to the Sample App"
+  welcome: "Welcome to the E-Learning Website"
   home-description: "This is the home page for the Framgia E-Learning System application."
   help-description: "This is the help page for the Framgia E-Learning System application.
     This is the help page for the Framgia E-Learning System application.
