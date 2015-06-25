@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1><%= t("admin.user.list") %></h1>
+
+<table class="table table-bordered table-striped">
+  <thead>
+    <tr>
+      <th><%= t("title.name") %></th>
+      <th><%= t("title.email") %></th>
+      <th><%= t("title.active") %></th>
+      <th><%= t("title.admin_title") %></th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user.name %></td>
+        <td><%= user.email %></td>
+        <td><%= user.active %></td>
+        <td><%= user.admin %></td>
+        <td><%= link_to t("features.show") %></td>
+        <td><%= link_to t("features.edit"), edit_admin_user_path(user) %></td>
+        <td><%= link_to t("features.destroy"), user, method: :delete,
+                        data: {confirm: t("login.question")} %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<br>
+
+<%= link_to t("login.new_user"), new_admin_user_path %>

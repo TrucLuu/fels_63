@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong><%= t "title.name" %>:</strong>
+  <%= @user.name %>
+</p>
+
+<p>
+  <strong><%= t "title.email" %>:</strong>
+  <%= @user.email %>
+</p>
+
+<p>
+  <strong><%= t "title.pw" %>:</strong>
+  <%= @user.password %>
+</p>
+
+<p>
+  <strong><%= t "title.pw_confirmation" %>:</strong>
+  <%= @user.password_confirmation %>
+</p>
+
+<p>
+  <strong><%= t "title.active" %>:</strong>
+  <%= @user.active %>
+</p>
+
+<p>
+  <strong><%= t "title.admin_title" %>:</strong>
+  <%= @user.admin %>
+</p>
+
+<%= link_to  t("features.edit") , edit_admin_user_path(@user) %> |
+<%= link_to t("features.back"), admin_users_path %>

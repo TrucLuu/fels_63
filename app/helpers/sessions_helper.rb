@@ -39,7 +39,7 @@ module SessionsHelper
     redirect_to session[:forwarding_url] || default
     session.delete :forwarding_url
   end
-  
+
   def store_location
     session[:forwarding_url] = request.url if request.get?
   end
@@ -56,5 +56,12 @@ module SessionsHelper
     user.forget
     cookies.delete :user_id
     cookies.delete :remember_token
+  end
+end
+
+def admin_auth
+  logged_in_user
+  unless current_user.is_admin?
+    redirect_to root_url, danger: t("admin.not_authenticated")
   end
 end

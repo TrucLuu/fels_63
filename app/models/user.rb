@@ -12,6 +12,7 @@ class User < ActiveRecord::Base
   has_many :following, through: :active_relationships, source: :followed
   has_many :followers, through: :passive_relationships, source: :follower,
                        dependent: :destroy
+  has_secure_password
 
   validates :name, presence: true, length: {maximum: Settings.length.short_maximum}
   validates :email, presence: true, length: {maximum: Settings.length.long_maximum},
@@ -19,8 +20,6 @@ class User < ActiveRecord::Base
                     uniqueness: {case_sensitive: false},
                     if: "new_record?"
   validates :password, length: {minimum: Settings.length.minimum}, if: "password_set?"
-
-  has_secure_password
 
   def password_set?
     new_record? || password.present?
@@ -34,7 +33,7 @@ class User < ActiveRecord::Base
 
   def User.digest string
     cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
-    BCrypt::Engine.cost
+                                                  BCrypt::Engine.cost
     BCrypt::Password.create string, cost: cost
   end
 
@@ -86,5 +85,9 @@ class User < ActiveRecord::Base
 
   def password_reset_expired?
     reset_sent_at < Settings.TWOHOUR.hours.ago
+  end
+
+  def is_admin?
+    self.active && self.admin
   end
 end

@@ -2,6 +2,30 @@ en:
   contains: "The form contains "
   error: "error"
   create-account: "Create my account"
+  features:
+    show: "Show"
+    back: "Back"
+    edit: "Edit"
+    destroy: "Delete"
+  title:
+    name: "Name"
+    email: "Email"
+    active: "Active"
+    admin_title: "Admin"
+    pw: "Password"
+    pw_confirmation: "Password_confirmation"
+  admin:
+    not_authenticated: "You don't have permission to access this page"
+    count-error: "prohibited this admin_user from being saved:"
+    category: "Categories"
+    lesson: "Lessons"
+    word: "Words"
+    user:
+      list: "List Users Admin"
+      new: "New User Admin"
+      update:
+        success: "User was successfully created."
+        failed: "Could not update user"
   hello: "Hello world !"
   elearning: "Framgia E-Learning System"
   signup: "Sign-up"
@@ -20,6 +44,7 @@ en:
     profile: "Profile"
     setting: "Settings"
     button: "Login"
+    question: "Are you sure?"
     failed: "Invalid Email/Password combination"
     require: "Please login"
     success: "Login success"
