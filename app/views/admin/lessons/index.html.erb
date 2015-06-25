@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<h1><%= t "admin.lesson_label.admin_lesson_list" %></h1>
+
+<table class="table tab-content table-striped">
+  <thead>
+    <tr>
+      <th><%= t "title.name" %></th>
+      <th><%= t "title.content" %></th>
+      <th><%= t "title.image" %></th>
+      <th><%= t "title.category" %></th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @lessons.each do |lesson| %>
+      <tr>
+        <td><%= lesson.name %></td>
+        <td><%= lesson.content %></td>
+        <td><%= lesson.image %></td>
+        <td><%= lesson.category_id %></td>
+        <td><%= link_to t("features.show"), [:admin, lesson] %></td>
+        <td><%= link_to t("features.edit"), edit_admin_lesson_path(lesson) %></td>
+        <td><%= link_to t("features.destroy"), [:admin, lesson], method: :delete,
+                        data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to t("admin.lesson_label.new_lesson"), new_admin_lesson_path %>

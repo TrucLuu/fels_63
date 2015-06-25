@@ -11,8 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+ActiveRecord::Schema.define(version: 20150625170737) do
 
-ActiveRecord::Schema.define(version: 20150624103901) do
+  create_table "admin_lessons", force: :cascade do |t|
+    t.string   "name"
+    t.string   "content"
+    t.string   "image"
+    t.integer  "category_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
 
   create_table "answers", force: :cascade do |t|
     t.boolean  "correct"
@@ -35,6 +43,9 @@ ActiveRecord::Schema.define(version: 20150624103901) do
     t.integer  "category_id"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
+    t.string   "name"
+    t.string   "content"
+    t.string   "image"
   end
 
   create_table "relationships", force: :cascade do |t|
@@ -56,17 +67,6 @@ ActiveRecord::Schema.define(version: 20150624103901) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "settings", force: :cascade do |t|
-    t.string   "var",                   null: false
-    t.text     "value"
-    t.integer  "thing_id"
-    t.string   "thing_type", limit: 30
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "settings", ["thing_type", "thing_id", "var"], name: "index_settings_on_thing_type_and_thing_id_and_var", unique: true
-
   create_table "users", force: :cascade do |t|
     t.string   "name"
     t.string   "email"
@@ -76,9 +76,9 @@ ActiveRecord::Schema.define(version: 20150624103901) do
     t.string   "image"
     t.datetime "created_at",        null: false
     t.datetime "updated_at",        null: false
-    t.string   "remember_digest"
     t.string   "activation_digest"
     t.datetime "activated_at"
+    t.string   "remember_digest"
     t.string   "reset_digest"
     t.datetime "reset_sent_at"
   end
