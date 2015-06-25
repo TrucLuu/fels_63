@@ -12,3 +12,4 @@ setting:
   maximum_length_name: 50
   minimum_length_password: 6
   VALID_EMAIL_REGEX: !ruby/regexp /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+  mail_default: "test@gmail.com"
