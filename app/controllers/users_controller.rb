@@ -3,8 +3,15 @@ class UsersController < ApplicationController
   before_action :correct_user, only: [:edit, :update]
   before_action :set_user, only: [:show, :edit, :update]
 
+  def index
+    @users = User.paginate page: params[:page], per_page: Settings.length.page
+  end
+
   def new
     @user = User.new
+  end
+
+  def show
   end
 
   def create
