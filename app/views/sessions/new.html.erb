@@ -8,6 +8,7 @@
       <%= f.email_field :email, class: "form-control" %>
 
       <%= f.label :password %>
+      <%= link_to t("forgot-link"), new_password_reset_path %>
       <%= f.password_field :password, class: "form-control" %>
 
       <%= f.submit t("login.button"), class: "btn btn-primary" %>
