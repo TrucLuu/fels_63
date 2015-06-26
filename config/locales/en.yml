@@ -17,7 +17,14 @@ en:
   admin:
     not_authenticated: "You don't have permission to access this page"
     count-error: "prohibited this admin_user from being saved:"
-    category: "Categories"
+    category: 
+      name: "Categories"
+      content: "Category content"
+      create: "Create category"
+      update:
+        delete_success: "Category was successfully deleted !"
+        delete_failed: "Could not delete category !"
+
     lesson: "Lessons"
     word: "Words"
     user:
@@ -81,3 +88,6 @@ en:
   categories: "Categories"
   learned: "You're learned "
   start: "Start"
+  category:
+    create: "Category created !"
+    update: "Category updated !"
