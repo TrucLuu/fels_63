@@ -1,7 +1,7 @@
 class Admin::LessonsController < ApplicationController
   before_action :set_lesson, only: [:show, :edit, :update, :destroy]
   before_action :admin_auth
-
+  before_action :get_categories, only: [:new, :edit]
   def index
     @lessons = Lesson.all
   end
@@ -39,11 +39,15 @@ class Admin::LessonsController < ApplicationController
   end
 
   private
+  def get_categories
+    @categories = Category.all
+  end
+
   def set_lesson
     @lesson = Lesson.find params[:id]
   end
 
   def lesson_params
-    params.require(:@lesson).permit(:name, :content, :image, :category_id)
+    params.require(:lesson).permit(:name, :content, :image, :category_id)
   end
 end

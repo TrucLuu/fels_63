@@ -2,7 +2,7 @@
 
 <p>
   <strong><%= t "title.name" %>:</strong>
-  <%= @admin_lesson.name %>
+  <%= @lesson.name %>
 </p>
 
 <p>
@@ -17,7 +17,7 @@
 
 <p>
   <strong><%= t "title.category" %>:</strong>
-  <%= @lesson.category_id %>
+  <%= @lesson.category.name %>
 </p>
 
 <%= link_to t("features.edit"), edit_admin_lesson_path(@lesson) %> |

@@ -15,11 +15,12 @@
 
   <tbody>
     <% @lessons.each do |lesson| %>
+      <% next unless lesson.category %>
       <tr>
         <td><%= lesson.name %></td>
         <td><%= lesson.content %></td>
         <td><%= lesson.image %></td>
-        <td><%= lesson.category_id %></td>
+        <td><%= lesson.category.name %></td>
         <td><%= link_to t("features.show"), [:admin, lesson] %></td>
         <td><%= link_to t("features.edit"), edit_admin_lesson_path(lesson) %></td>
         <td><%= link_to t("features.destroy"), [:admin, lesson], method: :delete,
