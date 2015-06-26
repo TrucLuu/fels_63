@@ -12,6 +12,8 @@ en:
     email: "Email"
     active: "Active"
     admin_title: "Admin"
+    content: "Content"
+    category: "Category"
     pw: "Password"
     pw_confirmation: "Password_confirmation"
   admin:
@@ -22,7 +24,9 @@ en:
     word: "Words"
     user:
       list: "List Users Admin"
+      word_list: "Listing Admin Words"
       new: "New User Admin"
+      new_word: "New Word"
       update:
         success: "User was successfully created."
         delete_success: "User was successfully deleted"

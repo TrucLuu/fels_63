@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong><%= t "title.content" %>:</strong>
+  <%= @word.content %>
+</p>
+
+<p>
+  <strong><%= t "title.category" %>:</strong>
+  <%= @word.category.name %>
+</p>
+
+<%= link_to t "features.edit", edit_admin_word_path(@admin_word) %> |
+<%= link_to t "features.back", admin_words_path %>
