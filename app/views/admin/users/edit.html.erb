@@ -1,0 +1,8 @@
+<h1>
+  <%= "#{t("features.edit")} #{t("title.admin_title")} #{t("login.user")}" %>
+</h1>
+
+<%= render "form" %>
+
+<%= link_to t "features.show", @user %>
+<%= link_to t "features.back", admin_users_path %>
