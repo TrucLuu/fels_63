@@ -12,6 +12,9 @@ en:
     email: "Email"
     active: "Active"
     admin_title: "Admin"
+    content: "Content"
+    image: "Image"
+    category: "Category"
     pw: "Password"
     pw_confirmation: "Password_confirmation"
   admin:
@@ -19,6 +22,14 @@ en:
     count-error: "prohibited this admin_user from being saved:"
     category: "Categories"
     lesson: "Lessons"
+    lesson_label:
+      new_lesson: "New Lesson"
+      admin_lesson_list: "Listing Admin Lessons"
+      admin_new_lesson: "Admin New Lesson"
+      admin_lesson_edit: "Admin Lesson Edit"
+      count-error: "prohibited this admin_lesson from being saved:"
+      update_success: "Lesson was successfully created."
+      destroy: "Lesson was successfully destroyed."
     word: "Words"
     user:
       list: "List Users Admin"

@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong><%= t "title.name" %>:</strong>
+  <%= @lesson.name %>
+</p>
+
+<p>
+  <strong><%= t "title.content" %>:</strong>
+  <%= @lesson.content %>
+</p>
+
+<p>
+  <strong><%= t "title.image" %>:</strong>
+  <%= @lesson.image %>
+</p>
+
+<p>
+  <strong><%= t "title.category" %>:</strong>
+  <%= @lesson.category.name %>
+</p>
+
+<%= link_to t("features.edit"), edit_admin_lesson_path(@lesson) %> |
+<%= link_to t("features.back"), admin_lessons_path %>

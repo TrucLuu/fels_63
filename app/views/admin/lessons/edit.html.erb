@@ -1,0 +1,6 @@
+<h1><%= t "admin.lesson_label.admin_lesson_edit" %></h1>
+
+<%= render "form" %>
+
+<%= link_to t("features.show"), [:admin, @lesson] %> |
+<%= link_to t("features.back"), admin_lessons_path %>
