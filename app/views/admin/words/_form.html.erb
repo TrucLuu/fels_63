@@ -1,0 +1,25 @@
+<%= form_for [:admin, @word] do |f| %>
+  <%= render "shared/error_messages", object: f.object %>
+
+  <div class="field">
+    <%= f.label :content %><br>
+    <%= f.text_field :content %>
+  </div>
+  <div class="field">
+    <%= f.label :category_id %><br>
+    <%= f.select :category_id,
+      options_from_collection_for_select(@categories, :id, :name)
+    %>
+  </div>
+    <%= f.fields_for :answers do |builder| %>
+    <p>
+      <%= builder.label :content, t("admin.word_label.answer") %>
+      <%= builder.text_field :content %>
+      <%= builder.label :correct, t("admin.word_label.answer-correct") %>
+      <%= builder.check_box :correct %>
+    </p>
+    <% end %>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
