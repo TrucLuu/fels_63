@@ -1,0 +1,8 @@
+<span class="panel-title"><%= category.name %></span>
+<span class="category-info">
+  <%= t "learned" %>
+  <%= "#{category.lessons.total_word(category,current_user)}/#{category.words.count}" %></span>
+<div class="content">
+  <p><%= category.content %></p>
+  <span><%= link_to t("start"), "#", class: "btn btn-primary" %></span>
+</div>
