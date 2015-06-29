@@ -12,6 +12,9 @@ class UsersController < ApplicationController
   end
 
   def show
+    @user = User.find params[:id]
+    @lessons = Lesson.follow_learned(@user).order_desc.paginate page: params[:page],
+      per_page: Settings.length.page
   end
 
   def create

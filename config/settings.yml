@@ -15,3 +15,4 @@ setting:
   VALID_EMAIL_REGEX: !ruby/regexp /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   mail_default: "test@gmail.com"
 TWOHOUR: 2
+question_number: 20
