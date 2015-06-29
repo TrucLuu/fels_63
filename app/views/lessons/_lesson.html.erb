@@ -1,0 +1,5 @@
+<%= gravatar_for @user, size: Settings.gravatar.normal_size %>
+<%= t "learned" %> <%= Settings.question_number %> 
+<%= t "word_lesson" %> "<%= lesson.category.name %>" -
+(<%= lesson.created_at.day %>/<%= lesson.created_at.month %>/<%= lesson.created_at.year %>)
+<hr>

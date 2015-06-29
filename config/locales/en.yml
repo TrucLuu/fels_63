@@ -91,3 +91,8 @@ en:
   category:
     create: "Category created !"
     update: "Category updated !"
+  activities: "Activities"
+  words: "words"
+  word_lesson: "words lesson"
+  word_list: "Word List"
+  start_lesson: "Start lesson"
