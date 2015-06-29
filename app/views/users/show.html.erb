@@ -1,29 +1,25 @@
 <% provide :title, @user.name %>
+<h1><%= t "activities" %></h1>
 <div class="row">
-  <aside class="col-md-4">
-    <section class="user_info">
-      <h1>
-        <%= gravatar_for @user, size: Settings.gravatar.normal_size %>
-        <%= @user.name %>
-      </h1>
-      <%= t "learned" %> 
-      <%= (@lessons.lesson_learned(@user).count) * Settings.question_number %>
-      <%= t "words" %>
-    </section>
+  <aside class="col-md-6">
+    <%= render "follow_form" if logged_in? %>
+    <br>
+    <%= render "users/show_follow" %>
+    <hr>
   </aside>
-</div>
-<div class="col">
-<% if current_user? @user %>
-  <div class="btn-group inline"> 
-    <%= button_to t("word_list"), "#", class: "btn btn-default", :method => :get %>
-  </div> 
-  <div class="btn-group inline"> 
-    <%= button_to t("start_lesson"), "#", class: "btn btn-default", :method => :get %>
-  </div> 
-<% end %>
-  <h1><%= t "activities" %></h1>
-  <%= render @lessons %>
-<div id="infinite-scrolling">
-  <%= will_paginate @lessons %>
-</div>
+  <div class="col-md-8">
+    <% if current_user? @user %>
+      <div class="btn-group inline"> 
+        <%= link_to t("word_list"), words_path, class: "btn btn-default" %>
+      </div> 
+      <div class="btn-group inline"> 
+        <%= link_to t("start_lesson"), "#", class: "btn btn-default" %>
+      </div>
+      <hr > 
+    <% end %>
+    <%= render @lessons %>
+    <div id="infinite-scrolling">
+      <%= will_paginate @lessons %>
+    </div>
+  </div>
 </div>

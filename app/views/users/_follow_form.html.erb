@@ -1,0 +1,22 @@
+<aside class="col-md-4">
+  <section class="user_info">
+    <h1>
+      <%= gravatar_for @user, size: Settings.gravatar.large_size %>
+      <%= @user.name %>
+    </h1>
+    <h5>
+      <%= t "learned" %> 
+      <%= (@lessons.lesson_learned(@user).count) * Settings.question_number %>
+      <%= t "words" %>
+    </h5>
+  </section>
+  <section>
+    <div id="follow_form">
+      <% if current_user.following? @user %>
+        <%= render "users/unfollow" %>
+      <% else %>
+        <%= render "users/follow" %>
+      <% end %>
+    </div>
+  </section>
+</aside>

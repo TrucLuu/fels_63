@@ -96,7 +96,7 @@ en:
   submit: "Submit"
   update-password: "Update Password"
   categories: "Categories"
-  learned: "You're learned "
+  learned: " learned "
   start: "Start"
   category:
     create: "Category created !"
@@ -119,3 +119,8 @@ en:
   ID: "ID"
   word.all: "All"
   result: "result"
+  follow: "Follow"
+  unfollow: "UnFollow"
+  activities: "Activities"
+  following: "Following"
+  followers: "Followers"

@@ -31,6 +31,10 @@ class User < ActiveRecord::Base
     following.include? other_user
   end
 
+  def unfollow other_user
+    active_relationships.find_by(followed_id: other_user.id).destroy
+  end
+
   def password_set?
     new_record? || password.present?
   end
