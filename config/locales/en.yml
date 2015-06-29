@@ -12,6 +12,8 @@ en:
     email: "Email"
     active: "Active"
     admin_title: "Admin"
+    content: "Content"
+    category: "Category"
     pw: "Password"
     pw_confirmation: "Password_confirmation"
   admin:
@@ -24,12 +26,18 @@ en:
       update:
         delete_success: "Category was successfully deleted !"
         delete_failed: "Could not delete category !"
-
     lesson: "Lessons"
     word: "Words"
+    word_label:
+      create_success: "Word was successfully created."
+      update_success: "Word was successfully updated."
+      answer: "Answer"
+      answer-correct: "Correct Answer"
     user:
       list: "List Users Admin"
+      word_list: "Listing Admin Words"
       new: "New User Admin"
+      new_word: "New Word"
       update:
         success: "User was successfully created."
         delete_success: "User was successfully deleted"
