@@ -1,8 +1,25 @@
-<span class="panel-title"><%= category.name %></span>
-<span class="category-info">
-  <%= t "learned" %>
-  <%= "#{category.lessons.total_word(category,current_user)}/#{category.words.count}" %></span>
-<div class="content">
-  <p><%= category.content %></p>
-  <span><%= link_to t("start"), "#", class: "btn btn-primary" %></span>
+<div class="container">
+  <div class="col-md-6">
+    <article>
+      <h3>
+        <%= category.name %>
+        <span class="label label-info"><%= category.words.count %></span>
+      </h3>
+      <span class="category-info">
+        <%= t "learned" %>
+        <%= "#{category.words.learned(current_user).count}/#{category.words.count}" %>
+      </span>
+      <p><%= category.content %></p>
+      <%= button_to t("start"), lessons_url(category_id: category.id), class: "btn btn-primary" %>
+      <hr>
+      <% if category.lessons.lesson_learned(current_user).present? %>
+        <%= link_to t("category.view-results"), lessons_url(category_id: category.id), class: "btn btn-success" %>
+      <% end %>
+      <hr>
+    </article>
+  </div>
+  <div class="col-md-6">
+    <%= image_tag "http://placehold.it/300x200", alt: category.name %>
+  </div>
 </div>
+<br>

@@ -1,4 +1,6 @@
 class WordsController < ApplicationController
+  before_action :word_set
+
   def index
     @categories = Category.all
     @words = if params[:search].present? || params[:filter_state].present?
@@ -13,5 +15,8 @@ class WordsController < ApplicationController
       format.html
       format.csv {send_data @words.to_csv}
     end
+  end
+
+  def show
   end
 end

@@ -2,13 +2,13 @@
   <%= render "shared/error_messages", object: f.object %>
   <p>
     <%= f.label :content %><br/>
-    <%= f.text_field :content %>
+    <%= f.text_field :content, required: true, class: "form-control"%>
   </p>
 
   <div class="field">
     <%= f.label :category_id %><br>
     <%= f.select :category_id,
-       options_from_collection_for_select(@categories, :id, :name)%>
+       options_from_collection_for_select(@categories, :id, :name) %>
   </div>
   <div class="answers">
     <%= f.fields_for :answers do |builder| %>

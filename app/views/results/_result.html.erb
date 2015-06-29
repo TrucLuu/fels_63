@@ -1,0 +1,15 @@
+<div class="row">
+  <div class="col-md-4">
+    <% if result.answer.present? %>
+      <div class="<%= result.answer.correct? ? "circle" : "cross" %>"></div>
+    <% else %>
+      <%= t "not-answer-yet" %>
+    <% end %>
+  </div>
+  <div class="col-md-4">
+    <%= result.word.content %>
+  </div>
+  <div class="col-md-4">
+    <%= result.answer.content if result.answer.present? %>
+  </div>
+</div>

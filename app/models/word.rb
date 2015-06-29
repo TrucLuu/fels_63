@@ -12,6 +12,7 @@ class Word < ActiveRecord::Base
   scope :not_learned, ->user{where(Settings.setting.sql_not_learned, user.id)}
   scope :filter_category, ->category{where category: category if category.present?}
   scope :get_all, ->user{}
+  scope :random_words, ->user {Word.not_learned(user).order("random()").limit(20)}
 
   def self.to_csv options = {}
     CSV.generate(options) do |csv|

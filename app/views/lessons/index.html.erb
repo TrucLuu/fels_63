@@ -1,0 +1,12 @@
+<h1><%= t "lesson.page_name" %></h1>
+<table class="table table-bordered">
+  <tbody>
+    <% @lessons.each do |lesson| %>
+      <tr>
+        <td><%= lesson.category_name %></td>
+        <td><%= "#{lesson.correct_total}/#{lesson.results.count}" %></td>
+        <td><%= link_to t("view"), category_lesson_path(lesson.category_id, lesson) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
