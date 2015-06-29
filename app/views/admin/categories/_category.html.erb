@@ -1,0 +1,8 @@
+<tr>
+  <td><%= category.name %></td>
+  <td><%= category.content %></td>
+  <td><%= link_to t("features.show"), admin_category_path(category) %></td>
+  <td><%= link_to t("features.edit"), edit_admin_category_path(category) %></td>
+  <td><%= link_to t("features.destroy"), admin_category_path(category), method: :delete,
+    data: {confirm: t("login.question")} %></td>
+</tr>
