@@ -15,6 +15,7 @@
     <%= render @categories %>
   </tbody>
 </table>
+<%= will_paginate %>
 <br>
 
 <%= link_to t("admin.category.create"), new_admin_category_path %>

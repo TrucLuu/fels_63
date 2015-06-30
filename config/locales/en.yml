@@ -110,3 +110,4 @@ en:
   message-link-to-function: "link_to_function is deprecated and will be removed from Rails 4.1.
   We recommend using Unobtrusive JavaScript instead.
   See http://guides.rubyonrails.org/working_with_javascript_in_rails.html#unobtrusive-javascript"
+  check_email: "Account not activated. Check your email for the activation link."

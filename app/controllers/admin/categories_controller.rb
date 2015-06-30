@@ -28,7 +28,8 @@ class Admin::CategoriesController < ApplicationController
   end
 
   def update
-    if @category.update_attributes user_params
+    @category = Category.find params[:id]
+    if @category.update_attributes category_params
       redirect_to [:admin, @category], notice: t("category.update")
     else
       render "edit"
