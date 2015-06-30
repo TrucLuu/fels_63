@@ -1,0 +1,8 @@
+<h1><%= t "home" %></h1>
+<div class="center jumbotron">
+  <h1><%= t "welcome" %></h1>
+  <%= link_to t("login.user"), admin_users_path, class: "btn btn-default" %>
+  <%= link_to t("admin.category.name"), admin_categories_path, class: "btn btn-default" %>
+  <%= link_to t("admin.lesson"), "#", class: "btn btn-default" %>
+  <%= link_to t("admin.word"), "#", class: "btn btn-default" %>
+</div>
