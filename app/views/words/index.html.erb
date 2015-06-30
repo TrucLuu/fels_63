@@ -1,0 +1,10 @@
+<%= render "shared/search" %>
+<div class="container">
+  <table class="table table-bordered">
+    <tr>
+      <th><%= t :ID %></th>
+      <th><%= t :word_content %></th>
+    </tr>
+    <%= render @words %>
+  </table>
+</div>

@@ -9,10 +9,16 @@ length:
   questions: 4
 VALID_EMAIL_REGEX: !ruby/regexp /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
 setting:
+  all: "get_all"
+  learned: "learned"
+  not_learned: "not_learned"
   maximum_length_email: 255
   maximum_length_name: 50
   minimum_length_password: 6
   VALID_EMAIL_REGEX: !ruby/regexp /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   mail_default: "test@gmail.com"
+  size_avatar: 50
+  sql_learned: "id IN (SELECT word_id FROM results WHERE lesson_id IN (SELECT id FROM lessons WHERE user_id = ?))"
+  sql_not_learned: "id NOT IN (SELECT word_id FROM results WHERE lesson_id IN (SELECT id FROM lessons WHERE user_id = ?))"
 TWOHOUR: 2
 question_number: 20

@@ -21,6 +21,16 @@ class User < ActiveRecord::Base
                     if: "new_record?"
   validates :password, length: {minimum: Settings.length.minimum}, if: "password_set?"
 
+  has_secure_password
+
+  def follow other_user
+    active_relationships.create followed_id: other_user.id
+  end
+
+  def following? other_user
+    following.include? other_user
+  end
+
   def password_set?
     new_record? || password.present?
   end
@@ -58,7 +68,7 @@ class User < ActiveRecord::Base
     digest = send "#{attribute}_digest"
     return false if digest.nil?
     BCrypt::Password.new(digest).is_password? token
-    end
+  end
 
   def forget
     update_attributes remember_digest: nil
