@@ -17,4 +17,6 @@ Rails.application.routes.draw do
   resources :account_activations, only: :edit
   resources :password_resets, except: [:destroy, :index]
   resources :categories, only: :index
+  resources :relationships, only: [:create, :destroy]
+  resources :words
 end

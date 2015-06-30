@@ -14,7 +14,7 @@ class SessionsController < ApplicationController
         redirect_to root_url
       end
     else
-      flash[:error] = t "login.failed"
+      flash[:danger] = t "login.failed"
       render "new"
     end
   end

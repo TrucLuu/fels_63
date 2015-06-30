@@ -14,6 +14,7 @@ gem "bcrypt", "~> 3.1.7"
 gem "i18n"
 gem "will_paginate"
 gem "rails_config"
+gem "bootstrap-will_paginate", "~> 0.0.10"
 
 group :development, :test do
   gem "byebug"
