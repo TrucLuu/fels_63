@@ -27,8 +27,16 @@ class UsersController < ApplicationController
       render "new"
     end
   end
+  
+  def edit
+  end
 
   def update
+    if @user.update_attributes user_params
+      redirect_to [:admin, @user], notice: t("admin.user.update.success")
+    else
+      render "edit"
+    end
   end
 
   private
@@ -42,6 +50,6 @@ class UsersController < ApplicationController
 
   def correct_user
     @users = User.find params[:id]
-    redirect_to root_url unless current_user?(@user)
+    redirect_to root_url if current_user? @user
   end
 end
