@@ -3,8 +3,8 @@
   <td><%= user.email %></td>
   <td><%= user.active %></td>
   <td><%= user.admin %></td>
-  <td><%= link_to t("features.show") %></td>
+  <td><%= link_to t("features.show"), admin_user_path(user) %></td>
   <td><%= link_to t("features.edit"), edit_admin_user_path(user) %></td>
-  <td><%= link_to t("features.destroy"), user, method: :delete,
+  <td><%= link_to t("features.destroy"), admin_user_path(user), method: :delete,
                   data: {confirm: t("login.question")} %></td>
 </tr>
