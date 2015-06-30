@@ -33,6 +33,8 @@ en:
       update_success: "Word was successfully updated."
       answer: "Answer"
       answer-correct: "Correct Answer"
+      destroy: "Remove Answer"
+      add-answer: "Add Answer"
     user:
       list: "List Users Admin"
       word_list: "Listing Admin Words"
@@ -105,3 +107,6 @@ en:
   word_list: "Word List"
   start_lesson: "Start lesson"
   dashbroad: "Dashbroad"
+  message-link-to-function: "link_to_function is deprecated and will be removed from Rails 4.1.
+  We recommend using Unobtrusive JavaScript instead.
+  See http://guides.rubyonrails.org/working_with_javascript_in_rails.html#unobtrusive-javascript"

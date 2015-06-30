@@ -31,7 +31,7 @@ class Admin::WordsController < ApplicationController
 
   def update
     if @word.update_attributes word_params
-      redirect_to @word, notice: t("admin.word_label.update_success")
+      redirect_to [:admin, @word], notice: t("admin.word_label.update_success")
     else
       render "edit"
     end
@@ -57,6 +57,6 @@ class Admin::WordsController < ApplicationController
 
   def word_params
     params.require(:word).permit :content, :category_id,
-      answers_attributes: [:content, :correct]
+      answers_attributes: [:id, :content, :correct, :_destroy]
   end
 end
