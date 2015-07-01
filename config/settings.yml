@@ -20,6 +20,8 @@ setting:
   size_avatar: 50
   sql_learned: "id IN (SELECT word_id FROM results WHERE lesson_id IN (SELECT id FROM lessons WHERE user_id = ?))"
   sql_not_learned: "id NOT IN (SELECT word_id FROM results WHERE lesson_id IN (SELECT id FROM lessons WHERE user_id = ?))"
+  search: "content LIKE ?"
+  content: "{content}"
   follow_type:
   - following
   - followers
