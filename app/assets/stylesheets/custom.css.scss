@@ -234,3 +234,37 @@ input {
 .tm-submit input{
   width: auto;
 }
+
+/* circle */
+
+.circle {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  border-radius: 50px;
+  border: 3px solid red;
+  color: red;
+}
+
+/* cross X */
+
+.cross {
+  display: inline-block;
+  margin-left: 20px;
+  background: red;
+  height: 50px;
+  position: relative;
+  width: 3px;
+  transform: rotate(45deg);
+}
+
+.cross:after {
+  display: inline-block;
+  background: red;
+  content: "";
+  height: 3px;
+  left: -25px;
+  position: absolute;
+  top: 25px;
+  width: 50px;
+}
