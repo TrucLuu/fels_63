@@ -16,7 +16,8 @@
       <% end %>
     </div>
     <div class="tm-submit">
-      <%= f.submit t "search", class: "glyphicon glyphicon-search" %>
+      <%= f.submit t("search"), class: "btn btn-primary btn-default" %>
+      <%= link_to t("CSV"), words_path(format: "csv"), class: "btn btn-primary btn-default" %>
     </div>
   </div>
   <hr>

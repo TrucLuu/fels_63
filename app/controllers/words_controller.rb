@@ -5,6 +5,11 @@ class WordsController < ApplicationController
       Word.filter_category(params[:category_id]).send params[:filter_state], current_user
     else
       Word.all
-  end
+    end
+
+    respond_to do |format|
+      format.html
+      format.csv {send_data @words.to_csv}
+    end
   end
 end
