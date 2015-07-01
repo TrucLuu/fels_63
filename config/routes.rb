@@ -19,4 +19,5 @@ Rails.application.routes.draw do
   resources :categories, only: :index
   resources :relationships, only: [:create, :destroy]
   resources :words
+  resources :results, only: :show
 end

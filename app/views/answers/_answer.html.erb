@@ -1,0 +1,11 @@
+<tr>
+  <td>
+    <% if answer.correct %>
+      <div class="circle"></div>
+    <% else %>
+      <div class="cross"></div>
+    <% end %>
+  </td>
+  <td><%= answer.word.content %></td>
+  <td><%= answer.content %></td>
+</tr>

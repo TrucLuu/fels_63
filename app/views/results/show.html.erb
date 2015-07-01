@@ -1,0 +1,8 @@
+<h3>
+  <%= @result.lesson.category.name %>
+  <%= t "result" %>
+  <%= @result.lesson.correct_total %>/<%= Settings.question_number %>
+</h3>
+<table class="table">
+  <%= render @answers %>
+</table>
