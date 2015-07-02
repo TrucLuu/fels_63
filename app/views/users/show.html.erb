@@ -1,13 +1,12 @@
 <% provide :title, @user.name %>
 <h1><%= t "activities" %></h1>
 <div class="row">
-  <aside class="col-md-6">
-    <%= render "follow_form" if logged_in? %>
-    <br>
+  <aside class="col-md-4">
     <%= render "users/show_follow" %>
-    <hr>
   </aside>
   <div class="col-md-8">
+    <%= render "follow_form" unless current_user? @user %>
+    <hr>
     <% if current_user? @user %>
       <div class="btn-group inline"> 
         <%= link_to t("word_list"), words_path, class: "btn btn-default" %>
@@ -15,7 +14,7 @@
       <div class="btn-group inline"> 
         <%= link_to t("start_lesson"), "#", class: "btn btn-default" %>
       </div>
-      <hr > 
+      <hr> 
     <% end %>
     <%= render @lessons %>
     <div id="infinite-scrolling">
