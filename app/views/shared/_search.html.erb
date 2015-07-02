@@ -3,8 +3,12 @@
     <p><%= t :categories %></p>
     <div id="search-field">
       <div class="col-md-5">
-       <%= select_tag "category_id", options_from_collection_for_select(@categories, "id", "name", params[:category_id]), include_blank: t("word.all") %>
+        <%= select_tag "category_id", options_from_collection_for_select(@categories, 
+          "id", "name", params[:category_id]), include_blank: t("word.all") %>
+        <%= text_field_tag :search, params[:search] %>
+      <%= submit_tag t("search"), class: "btn btn-primary btn-default" %>
       </div>
+
     </div>
     <div class="tm-radio">
       <% [Settings.setting.all, Settings.setting.learned, Settings.setting.not_learned].each do |item| %>
@@ -16,7 +20,7 @@
       <% end %>
     </div>
     <div class="tm-submit">
-      <%= f.submit t("search"), class: "btn btn-primary btn-default" %>
+      <%= f.submit t("Filter"), class: "btn btn-primary btn-default" %>
       <%= link_to t("CSV"), words_path(format: "csv"), class: "btn btn-primary btn-default" %>
     </div>
   </div>
