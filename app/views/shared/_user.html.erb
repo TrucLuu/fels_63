@@ -1,2 +1,11 @@
-<%= link_to gravatar_for(current_user, size: {with: Settings.setting.size_avatar}), current_user %>
-<h1><%= current_user.name %></h1>
+<section class="user_info">
+  <h1>
+    <%= gravatar_for @user, size: Settings.gravatar.large_size %>
+    <%= @user.name %>
+  </h1>
+  <h5>
+    <%= t "learned" %> 
+    <%= @lessons.lesson_learned(@user).count * Settings.question_number %>
+    <%= t "words" %>
+  </h5>
+</section>

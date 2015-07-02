@@ -1,4 +1,4 @@
-<%= gravatar_for lesson.user, size: Settings.gravatar.normal_size %>
+<%= link_to (gravatar_for lesson.user, size: Settings.gravatar.normal_size), user_path(lesson.user) %>
 <%= lesson.user.name %>
 <%= t "learned" %> <%= Settings.question_number %> 
 <%= t "word_lesson" %> "<%= lesson.category.name %>" -

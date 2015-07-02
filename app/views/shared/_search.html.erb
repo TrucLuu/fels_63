@@ -1,27 +1,29 @@
 <%= form_for words_path, method: :get do |f| %>
+<h1><%= t "words_list" %></h1>
   <div class="row">
-    <p><%= t :categories %></p>
     <div id="search-field">
-      <div class="col-md-5">
+      <div class="col-md-4">
         <%= select_tag "category_id", options_from_collection_for_select(@categories, 
-          "id", "name", params[:category_id]), include_blank: t("word.all") %>
-        <%= text_field_tag :search, params[:search] %>
-      <%= submit_tag t("search"), class: "btn btn-primary btn-default" %>
+          "id", "name", params[:category_id]), include_blank: t("word.all"), class: "form-control" %>
+        <div class="tm-radio">
+          <% [Settings.setting.all, Settings.setting.learned, Settings.setting.not_learned].each do |item| %>
+            <%= label_tag item, class: "radio-inline" do %>
+              <%= radio_button_tag :filter_state, item, 
+                checked = (params[:filter_state] == item || params[:filter_state].blank?), class: "form-control" %> 
+                  <%= item.titleize %>
+            <% end %>
+          <% end %>
+        </div>
       </div>
-
     </div>
-    <div class="tm-radio">
-      <% [Settings.setting.all, Settings.setting.learned, Settings.setting.not_learned].each do |item| %>
-        <%= label_tag item, class: "radio-inline" do %>
-          <%= radio_button_tag :filter_state, item, 
-            checked = (params[:filter_state] == item || params[:filter_state].blank?) %> 
-          <%= item.titleize %>
-        <% end %>
-      <% end %>
+    <div class="col-md-4">
+      <%= text_field_tag :search, params[:search], class: "form-control" %>
     </div>
-    <div class="tm-submit">
-      <%= f.submit t("Filter"), class: "btn btn-primary btn-default" %>
-      <%= link_to t("CSV"), words_path(format: "csv"), class: "btn btn-primary btn-default" %>
+    <div class="col-md-1">
+      <%= submit_tag t("search"), class: "form-control" %>
+    </div>
+    <div class="col-md-1">
+      <%= link_to t("csv"), words_path(format: "csv"), class: "form-control" %>
     </div>
   </div>
   <hr>
