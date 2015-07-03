@@ -1,0 +1,19 @@
+<section class="result" number="<%= f.options[:child_index] %>"
+  style="display:<%= f.options[:child_index] != 0 ? "none" : '' %>">
+  <div class="question">
+    <div class="col-md-6 text-center">
+      <h1><%= f.object.word.content %></h1>
+      <%= f.hidden_field :word_id, value: f.object.word.id %>
+    </div>
+    <div class="col-md-4 text-left">
+      <% f.object.word.answers.each do |answer| %>
+        <h1>
+          <% answer.content %></h1>
+        <%= f.label id: answer.id, class: "rg-from" do %>
+          <%= answer.content %>
+        <% end %>
+        <%= f.radio_button :answer_id, answer.id, class: "radio_option" %>
+      <% end %>
+    </div>
+  </div>
+</section>

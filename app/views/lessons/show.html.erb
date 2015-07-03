@@ -1,0 +1,44 @@
+<%= provide :title, t("result") %>
+<h1>
+  <span><%= @category.name %></span>
+  <%= t "result" %> <span><%= "#{@lesson.correct_total}/#{@lesson.results.count}" %></span>
+</h1>
+<div class="container">
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th><%= t "result" %></th>
+        <th><%= t "words" %></th>
+        <th><%= t "your-answer" %></th>
+        <th><%= t "admin.word_label.answer" %></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @lesson.results.each do |result| %>
+        <tr>
+          <td>
+            <% if result.answer.nil? %>
+              <%= t "not-answer-yet"%>
+            <% elsif result.answer.correct? %>
+              <span class="glyphicon glyphicon-ok"></span>
+            <% else %>
+              <span class="glyphicon glyphicon-remove"></span>
+            <% end %>
+          </td>
+          <td><%= result.word.content %></td>
+          <td>
+            <% if result.answer.nil? %>
+              <span><%= t "not-answer-yet"%></span>
+            <% else %>
+              <%= result.answer.content %>
+            <% end %>
+          </td>
+          <td>
+            <%= result.word.answers.find_by(correct: 1).content %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <%= hidden_field_tag "page", params[:check] %>
+</div>

@@ -1,6 +1,20 @@
 <%= provide :title, t("categories") %>
-<h1><%= t "categories" %></h1>
-<div class="row">
-  <%= render @categories %>
-  <%= will_paginate %>
+<div class="container">
+  <div class="container">
+    <h1>
+      <%= t "categories" %>
+    </h1>
+  </div>
+  <div class="row">
+    <% @categories.each do |category| %>
+      <h3>
+        <%= category.name %>
+        <%= link_to lessons_path(category_id: category.id), method: :post, style: "padding-left: 600px;" do %>
+          <span class="label label-danger"><%= t "start" %></span>
+        <% end %>
+      </h3>
+    <% end %>
+    <%= will_paginate %>
+  </div>
 </div>
+

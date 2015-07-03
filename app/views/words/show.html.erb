@@ -1,0 +1,24 @@
+<div class="container ">
+  <div class="col-md-4">
+    <article>
+      <header>
+        <h4>
+          <%= @category.name %>
+          (<%= @lesson.results.answered.count %>/<%= @lesson.results.count %>)
+        </h4>
+      </header>
+      <h1>
+        <p>
+          <%= @word.content %>
+        </p>
+      </h1>
+    </article>
+  </div>
+  <div class="col-md-6">
+    <% @word.answers.each do |answer| %>
+      <%= button_to answer.content,
+        lesson_word_path(@lesson, @word, {answer_id: answer.id}),
+        class: "btn btn-success", method: :patch %>
+    <% end %>
+  </div>
+</div>

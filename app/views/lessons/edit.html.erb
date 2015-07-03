@@ -1,0 +1,20 @@
+<h1>
+  <%= I18n.t "lesson.page_name" %>
+  <br>
+  <%= @category.name %>
+</h1>
+<h3 class="realtime"></h3>
+<div class="container">
+  <div class="row" id="lesson">
+    <%= form_for @lesson do |f| %>
+      <%= f.fields_for :results do |builder| %>
+        <%= render "results", f: builder %>
+      <% end %>
+      <div class="col-md-4 text-right">
+        <%= link_to (I18n.t "button.preview"), "#", class: "btn btn-primary control", id: "prev" %>
+        <%= link_to (I18n.t "button.next"), "#", class: "btn btn-primary control", id: "next" %>
+        <%= button_tag (I18n.t "button.submit"), class: 'btn btn-primary', title: (I18n.t "button.submit") %>
+      </div>
+    <% end %>
+  </div>
+</div>
