@@ -12,9 +12,7 @@ class Admin::WordsController < ApplicationController
 
   def new
     @word = Word.new
-    Settings.length.questions.times do
-      @word.answers.build
-    end
+    @word.answers.build
   end
 
   def edit

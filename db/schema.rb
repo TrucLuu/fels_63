@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150626093652) do
+ActiveRecord::Schema.define(version: 20150701012537) do
 
   create_table "admin_words", force: :cascade do |t|
     t.string   "content"
@@ -41,6 +41,10 @@ ActiveRecord::Schema.define(version: 20150626093652) do
     t.integer  "category_id"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
+    t.string   "name"
+    t.string   "content"
+    t.string   "image"
+    t.boolean  "active"
   end
 
   create_table "relationships", force: :cascade do |t|
@@ -80,9 +84,9 @@ ActiveRecord::Schema.define(version: 20150626093652) do
 
   create_table "words", force: :cascade do |t|
     t.string   "content"
-    t.integer  "category_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.integer  "category_id"
   end
 
 end
