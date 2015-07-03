@@ -4,7 +4,7 @@ class Admin::WordsController < ApplicationController
   before_action :get_categories, only: [:new, :show, :edit]
 
   def index
-    @words = Word.paginate page: params[:page], per_page: Settings.length.page
+    @words = Word.order_words.paginate page: params[:page], per_page: Settings.length.page
   end
 
   def show
