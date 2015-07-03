@@ -1,0 +1,6 @@
+<div class="col-md-4">
+  <%= form_tag admin_imports_path, multipart: true do %>
+    <%= file_field_tag :file, class: "form-control" %>
+    <%= submit_tag "Import", class: "form-control" %>
+  <% end %>
+</div>

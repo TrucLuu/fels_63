@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
   namespace :admin do
     root "dashbroads#index"
-    resources :words
+    resources :words 
+    resources :imports do 
+      collection {post :create}
+    end
     resources :users
     resources :categories
   end
